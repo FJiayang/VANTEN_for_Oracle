@@ -1,0 +1,22 @@
+.code {
+	font-family: Arial;
+	font-style: italic;
+	color: blue;
+	font-size: 27px;
+	border: 0;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	cursor: pointer !important;
+	padding-top: 0px;
+	padding-right: 50px;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	color: #288bc4;
+}
+
+a:hover {
+	text-decoration: underline;
+}

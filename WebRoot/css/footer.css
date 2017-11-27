@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.footer {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 20px;
+}
+.copyright p {
+	color: #000000;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.copyright a {
+	color: #000000;
+	text-decoration: none;
+}
+.copyright a:hover {
+	color: #000000;
+}

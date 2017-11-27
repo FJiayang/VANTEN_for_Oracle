@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>VANTEN信息科技有限公司</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/signin.css" rel="stylesheet">
+
+<!-- 二维码弹出 -->
+<link rel="stylesheet" href="css/reveal.css">
+<script src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+
+<!-- 二维码弹出 -->
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#horizontalTab').easyResponsiveTabs({
+			type : 'default', //Types: default, vertical, accordion           
+			width : 'auto', //auto or any width like 600px
+			fit : true, // 100% fit in a container
+		});
+	});
+	function checkpwd() {
+		'use strict';
+		var p1 = document.getElementById("Password2").value; //获取密码框的值
+		var p2 = document.getElementById("Password3").value; //获取重新输入的密码值
+		if (p1.match(/\d/) && p1.match(/[a-zA-Z]/ && p1.length >= 6)) {
+		{document.getElementById("msg").innerHTML = "";
+			return true;}
+		} else {
+			  alert("您输入的密码至少包含一个数字和一个字母！");  
+			/* document.getElementById("msg").innerHTML = "您输入的密码至少包含一个数字和一个字母！"; */
+			return false;
+		}
+		if(p1==""){
+		 alert("请输入密码！");//检测到密码为空，提醒输入//
+		 document.register.Password2.focus();//焦点放到密码框
+		 return false;//退出检测函数
+		}//如果允许空密码，可取消这个条件*/
+
+		if (p1 != p2) { //判断两次输入的值是否一致，不一致则显示错误信息
+			document.getElementById("msg").innerHTML = "两次输入密码不一致，请重新输入"; //在div显示错误信息
+
+			return false;
+		} else {
+			document.getElementById("msg").innerHTML = "";
+		//密码一致，可以继续下一步操作 
+		}
+	}
+	function isEmail(strEmail) {
+		if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1) {
+			document.getElementById("msg").innerHTML = "";
+			return true;
+		}
+		else
+			/*  alert("邮箱格式不正确"); */
+			document.getElementById("msg").innerHTML = "邮箱格式不正确";
+	}
+</script>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<center>
+			<h1>VANTEN信息科技有限公司</h1>
+		</center>
+
+		<ul id="myTab" class="nav nav-tabs nav-justified form0">
+			<li class="active"><a href="#denglu" data-toggle="tab"><center>登录</center></a>
+			</li>
+			<li><a href="#zhuce" data-toggle="tab"><center>注册</center></a></li>
+
+		</ul>
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active form1" id="denglu">
+				<form class="form-signin" action="JSPhandle/login.jsp" method="post">
+
+					<label for="inputUser" class="sr-only">用户</label> <input
+						type="text" id="inputUser" name="inputUser" class="form-control"
+						placeholder="用户" required autofocus> <label
+						for="inputPassword" class="sr-only">密码</label> <input
+						type="password" id="inputPassword" name="inputPassword"
+						class="form-control" placeholder="密码" required>
+					<div class="checkbox">
+						<label> <input type="checkbox" value="remember-me">记住密码
+						</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+
+
+					<!--二维码弹出-->
+					<a href="#" class="erweimatanchu" data-reveal-id="myModal"
+						data-animation="none"> 扫码登录 </a>
+					<div id="myModal" class="reveal-modal">
+						<center>
+							<img src="img/logon.jpg">
+						</center>
+						<a class="close-reveal-modal">&#215;</a>
+					</div>
+					<!--二维码弹出-->
+
+
+				</form>
+
+
+			</div>
+			<div class="tab-pane fade form3" id="zhuce">
+				<form class="form-signin" action="JSPhandle/signin_insert.jsp"
+					method="post">
+
+					<label for="inputUser" class="sr-only">用户</label> <input
+						type="text" id="inputUser" name="inputUser" class="form-control"
+						placeholder="用户" required autofocus> <label
+						for="inputPassword" class="sr-only">密码</label> <input
+						type="password" Name="Password2" class="form-control"
+						placeholder="密码" required="" id="Password2"> <input
+						type="password" Name="Password3" class="form-control"
+						placeholder="确认密码" required="" id="Password3"
+						onchange="checkpwd()"> <input type="text"
+						class="form-control" Name="Email" placeholder="邮箱" required=""
+						onblur=isEmail(this.value)> <input type="text"
+						class="form-control" Name="PhoneNumber" placeholder="手机号"
+						required="">
+					<div id="msg" style="color:rgba(220,20,60,1.00)"></div>
+					<div class="checkbox">
+						<label> <input type="checkbox" value="remember-me">同意条款
+						</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+
+				</form>
+			</div>
+
+		</div>
+
+
+
+		<div class="footer">
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<p>&copy; 2017 VANTEN信息科技有限公司. All Rights Reserved | Design by
+					VANTEN
+			</div>
+			</p>
+			<!-- //Copyright -->
+
+		</div>
+
+	</div>
+</body>
+</html>

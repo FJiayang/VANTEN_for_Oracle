@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>VANTEN信息科技有限公司</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/signin.css" rel="stylesheet">
+
+<!-- 二维码弹出 -->
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/Verification_Code.css">
+<script src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script type="text/javascript" src="js/Verification_Code.js"></script>
+
+<!-- 二维码弹出 -->
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+
+<body onload="createCode()">
+
+
+	<div class="container">
+		<center>
+			<h1>VANTEN信息科技有限公司</h1>
+		</center>
+
+		<ul id="myTab" class="nav nav-tabs nav-justified form0">
+			<li class="active"><a href="#denglu" data-toggle="tab" style="font-weight: bold;"><center>修改密码</center></a>
+			</li>
+			
+
+		</ul>
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active form1" id="denglu">
+				<form class="form-signin" action="JSPhandle/change_pass_update.jsp" method="post">
+
+					<label for="inputUser" class="sr-only">新密码</label> <input
+						type="password" id="inputPassword1" name="inputPassword1" class="form-control"
+						placeholder="新密码" required autofocus> <label
+						for="inputPassword" class="sr-only">确认新密码</label> <input
+						type="password" id="inputPassword" name="inputPassword"
+						class="form-control" placeholder="确认新密码" required>
+					<div class="checkbox">
+						<label> <input type="checkbox" value="remember-me">记住密码
+						</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">确认修改</button>
+
+				</form>
+
+
+			</div>
+			
+
+		</div>
+
+   	
+		<%@ include file="module/footer.jsp"%>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>VANTEN信息科技有限公司</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/signin.css" rel="stylesheet">
+
+<!-- 二维码弹出 -->
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/Verification_Code.css">
+<script src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script type="text/javascript" src="js/Verification_Code.js"></script>
+
+<!-- 二维码弹出 -->
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+
+<body onload="createCode()">
+
+
+	<div class="container">
+		<center>
+			<h1>VANTEN信息科技有限公司</h1>
+		</center>
+
+		<ul id="myTab" class="nav nav-tabs nav-justified form0">
+			<li class="active"><a href="#denglu" data-toggle="tab" style="font-weight: bold;"><center>找回密码</center></a>
+			</li>
+			
+
+		</ul>
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active form1" id="denglu">
+				<form class="form-signin" action="JSPhandle/forget_pass_check.jsp"
+					method="post">
+
+					<label for="inputUser" class="sr-only">用户名</label><input
+						type="text" id="inputUser" name="inputUser" class="form-control"
+						placeholder="用户名" required autofocus> <input type="text"
+						class="form-control" Name="Email" placeholder="注册时使用的邮箱"
+						required=""> <input type="text" class="form-control"
+						Name="PhoneNumber" placeholder="注册时使用的手机号" required="">
+					<div id="msg" style="color:rgba(220,20,60,1.00)"></div>
+					<div class="form-group">
+						<!-- <label for="exampleInputName2">验证码：</label> -->
+						<div class="code" id="checkCode"></div>
+						<a href="#" onclick="createCode()" class="text-right">看不清换一张</a>
+					</div>
+					<div class="form-group"  >
+						<input style="float:left;" type="text" id="inputCode"
+							class="form-control" placeholder="点击此处输入验证码"
+							onchange="validateCode()" />
+
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit"
+						style="max-width: 380px;letf:20px;
+						onclick="validateCode();">确认</button>
+				</form>
+
+			</div>
+			
+
+		</div>
+
+
+
+		<%@ include file="module/footer.jsp"%>
+
+	</div>
+</body>
+</html>
