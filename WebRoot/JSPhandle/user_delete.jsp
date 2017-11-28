@@ -41,13 +41,13 @@
 		Connection conn = DriverManager.getConnection(url, use, password);
 		PreparedStatement sql = conn
 				.prepareStatement("delete from tb_user where userName=?");
-		sql.setString(1, name);
-		String commit="commit";
-        sql.executeUpdate(commit);
+		sql.setString(1, name);		
 		int rtn = sql.executeUpdate();
 		if (rtn != 0) {
 			flag = true;
 		}
+		String commit="commit";
+        sql.executeUpdate(commit);
 		sql.close();
 		conn.close();
 		} catch (Exception ex) {

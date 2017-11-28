@@ -129,7 +129,7 @@
 										} else {
 									%>
 
-									<span class="font-noraml">主题: </span>><%=rs.getString("col_subject")%>
+									<span class="font-noraml">主题: </span><%=rs.getString("col_subject")%>
 
 									<%
 										}

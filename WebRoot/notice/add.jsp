@@ -29,7 +29,7 @@
 				Connection con = null;
 				Statement sql = null;
 				String condition = null;
-				condition = "INSERT INTO notice(公告内容,公告作者) VALUES('" + k3 + "','" + k4 + "')";
+				condition = "INSERT INTO notice(公告编号,公告内容,公告作者) VALUES(bbs_se.nextval,'" + k3 + "','" + k4 + "')";
 				con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle", "C##ROOT", "root");
 				sql = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				sql.executeUpdate(condition);
