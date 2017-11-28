@@ -43,7 +43,7 @@
 		try{
 		Connection conn = DriverManager.getConnection(url, use, password);
 		PreparedStatement sql = conn
-				.prepareStatement("update tb_user set userName=?,Email=?,Administrator = (case ? when '是' then '1'else '0' end ),VIP = (case ? when '是' then '1'else '0' end )where userName=");
+				.prepareStatement("update tb_user set userName=?,Email=?,Administrator = (case ? when '是' then '1'else '0' end ),VIP = (case ? when '是' then '1'else '0' end )where userName=?");
 		sql.setString(1, name);
 		sql.setString(2, Email);
 		sql.setString(3, Administrator);

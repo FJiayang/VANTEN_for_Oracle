@@ -42,6 +42,8 @@
 		PreparedStatement sql = conn
 				.prepareStatement("delete from tb_user where userName=?");
 		sql.setString(1, name);
+		String commit="commit";
+        sql.executeUpdate(commit);
 		int rtn = sql.executeUpdate();
 		if (rtn != 0) {
 			flag = true;

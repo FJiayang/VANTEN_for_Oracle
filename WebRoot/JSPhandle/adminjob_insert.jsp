@@ -44,6 +44,8 @@
 		sql.setString(1, name);
 		sql.setString(2, duty);
 		int rtn = sql.executeUpdate();
+		String commit="commit";
+        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}

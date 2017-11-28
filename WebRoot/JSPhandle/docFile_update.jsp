@@ -73,6 +73,8 @@
 			sql.setString(i++, empremark);
 			sql.setString(i++, empid);
 			int rtn = sql.executeUpdate();
+			String commit = "commit";
+			sql.executeUpdate(commit);
 			if (rtn != 0) {
 				flag = true;
 			}
@@ -92,7 +94,6 @@
 	<%
 		} else if (flag == false) {
 			out.println("插入失败，请将以下信息交给开发者处理");
-			
 	%>
 	<%-- <jsp:forward page="insert_success.jsp" /> --%>
 	<br>

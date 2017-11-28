@@ -44,6 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     sql.setString(3,email);
     sql.setString(4,PhoneNumber); 
     int rtn=sql.executeUpdate();  
+    String commit="commit";
+    sql.executeUpdate(commit);
     sql.close();  
     conn.close();  
     } catch (Exception ex) {

@@ -43,6 +43,8 @@
 				.prepareStatement("delete from adminstrator_record where AdminName=?");
 		sql.setString(1, name);
 		int rtn = sql.executeUpdate();
+		String commit="commit";
+        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}

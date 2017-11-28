@@ -46,6 +46,8 @@
 		sql.setString(2, Adminduty);
 		sql.setString(3, oldname);
 		int rtn = sql.executeUpdate();
+		String commit="commit";
+        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}
