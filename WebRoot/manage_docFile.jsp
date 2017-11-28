@@ -121,7 +121,7 @@
 
 									conn = DriverManager.getConnection(url, user, password);
 									Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-									sql = conn.prepareStatement("SELECT * FROM tb_docfile where edi_name=?;");
+									sql = conn.prepareStatement("SELECT * FROM tb_docfile where edi_name=?");
 									sql.setString(1, (String) user1);
 									rs = sql.executeQuery();
 									while (rs.next()) {

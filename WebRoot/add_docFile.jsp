@@ -57,7 +57,7 @@
 									PreparedStatement sql = null;
 									conn = DriverManager.getConnection(url, user, password);
 									Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-									sql = conn.prepareStatement("SELECT count(empid) col_Num FROM tb_docfile;");
+									sql = conn.prepareStatement("SELECT count(empid) col_Num FROM tb_docfile");
 									rs = sql.executeQuery();
 									while (rs.next()) {
 							%>

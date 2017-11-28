@@ -55,7 +55,7 @@
 		try {
 			Connection conn = DriverManager.getConnection(url, use, password);
 			PreparedStatement sql = conn.prepareStatement(
-					"UPDATE tb_docfile SET empjob=?,empname=?,empsex=?,empnation=?,empnative=?,empschool=?,empdept=?,empmajor=?,empbirthday=?,empQQ=?,empemail=?,empPhoneNum=?,empadress=?,empResume=?,empremark=? WHERE empid=?;");
+					"UPDATE tb_docfile SET empjob=?,empname=?,empsex=?,empnation=?,empnative=?,empschool=?,empdept=?,empmajor=?,empbirthday=?,empQQ=?,empemail=?,empPhoneNum=?,empadress=?,empResume=?,empremark=? WHERE empid=?");
 			sql.setString(i++, empjob);
 			sql.setString(i++, empname);
 			sql.setString(i++, empsex);

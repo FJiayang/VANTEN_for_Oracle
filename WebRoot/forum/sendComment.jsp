@@ -28,10 +28,10 @@
   <body>
 
    <%    
-  String referer=response.getHeader("Referer");
-              if(referer==null||!referer.startsWith("detail.jsp")){  
+ /*  String referer=response.getHeader("Referer");
+              if(referer==null){  
                response.sendRedirect("../index.jsp");  
-                } 
+                }  */
          request.setCharacterEncoding("utf-8");
          String k5 = request.getParameter("comment");
          String k6 = request.getParameter("subid");
