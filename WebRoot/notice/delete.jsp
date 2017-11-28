@@ -24,7 +24,7 @@
    try{Class.forName("oracle.jdbc.driver.OracleDriver");}catch(ClassNotFoundException event){out.print("暂时无法访问");}
     String condition=null;
     out.print(k1);
-    condition="DELETE from 公告表1  WHERE 公告编号 = '"+k1+"'";
+    condition="DELETE from notice  WHERE 公告编号 = '"+k1+"'";
    try {
     con=DriverManager.getConnection("jdbc:mysql://localhost/公告栏","root","123456");
     sql=con.createStatement();

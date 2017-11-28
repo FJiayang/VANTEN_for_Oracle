@@ -47,7 +47,7 @@
 			Connection con = null;
 			Statement sql = null;
 			String condition = null;
-		condition = "INSERT INTO tb_news(newtitle,newstext,newsfrom) VALUES('" + k1 + "','" + k2 + "','" + k3
+		condition = "INSERT INTO tb_news(newsid,newtitle,newstext,newsfrom) VALUES(bbs_se.nextval,'" + k1 + "','" + k2 + "','" + k3
 				+ "')";
 			con = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521:oracle", "C##ROOT", "root");
@@ -59,7 +59,7 @@
 			sql.close();
 			response.setHeader("refresh", "2;url=../mainframe.jsp");
 		} catch (SQLException event) {
-			out.print("发布新闻失败");
+			out.print("发布新闻失败"+k1+"<br>"+k2+"<br>"+k3);
 			response.setHeader("refresh", "5;url=../mainframe.jsp");
 			out.print("5秒后自动返回...");
 		}

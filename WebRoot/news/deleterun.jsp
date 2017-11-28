@@ -14,7 +14,7 @@
 <HTML>
 <head>
 <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="2;url=../issue_page.jsp">
+<!-- <meta http-equiv="refresh" content="2;url=../issue_page.jsp"> -->
 <title></title>
 </head>
 
@@ -34,24 +34,31 @@
 		Connection con = null;
 		Statement sql = null;
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost/db_school?useUnicode=true&characterEncoding=utf-8", "C##ROOT", "root");
+					"jdbc:oracle:thin:@localhost:1521:oracle", "C##ROOT", "root");
 			sql = con.createStatement();
 			if (s != null) {
 				for (int i = 0; i < s.length; i++) {
-					String text = "DELETE from " + table_name + " WHERE " + colname + " = '" + s[i] + "'";
+					String text = "DELETE from " + table_name + " WHERE " + colname + " = " + s[i];
 					sql.executeUpdate(text);
 				}
 			}
+			String commit="commit";
+        	 sql.executeUpdate(commit);
 			sql.close();
 			con.close();
 			out.print("成功删除");
 			response.setHeader("refresh", "2;url=../issue_page.jsp");
 			out.print("2秒后自动返回...");
 		} catch (SQLException event) {
-			 out.print("删除新闻失败,以下信息供开发者查看，查看传值是否正常");
+			 out.print("删除新闻失败,以下信息供开发者查看，查看传值是否正常<br>");
 			/*response.setHeader("refresh", "5;url=../issue_page.jsp"); */
 			out.print(colname);
 			out.print(table_name);
+			if (s != null) {
+				for (int i = 0; i < s.length; i++) {
+				out.print(s[i]);
+				}
+			}
 		}
 	%>
 </BODY>
