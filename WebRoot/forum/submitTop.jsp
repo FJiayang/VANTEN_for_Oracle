@@ -19,9 +19,9 @@
      String result = k1.replaceAll(re, ""); //找到不是数字的字符,用""替代   
      Connection con;Statement sql;  
      try{Class.forName("oracle.jdbc.driver.OracleDriver"); } catch(ClassNotFoundException e){out.print("驱动异常");}
-     try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","root","");
+     try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","C##ROOT","root");
      sql=con.createStatement();
-     String text="update send set flag = 1 where id = '"+result+"'";
+     String text="update tb_send set col_flag = 1 where col_id = '"+result+"'";
      sql.executeUpdate(text);
      sql.close();
      con.close();

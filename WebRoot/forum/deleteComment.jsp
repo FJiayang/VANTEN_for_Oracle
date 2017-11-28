@@ -28,10 +28,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           
          Connection con;Statement sql; 
          try{Class.forName("oracle.jdbc.driver.OracleDriver"); } catch(ClassNotFoundException e){out.print("驱动异常");}
-         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","root","");
+         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","C##ROOT","root");
          sql=con.createStatement();
-         String text="delete from comment where commentid = '"+result+"'" ;
+         String text="delete from tb_comment where col_commentid = '"+result+"'" ;
          sql.executeUpdate(text);
+         String commit="commit";
+        	 sql.executeUpdate(commit);
          sql.close();
          con.close();
          out.print("成功删除评论");

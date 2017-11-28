@@ -38,12 +38,15 @@
          String k7 = request.getParameter("username");
          Connection con; Statement sql;ResultSet rs;
          try{Class.forName("oracle.jdbc.driver.OracleDriver"); } catch(ClassNotFoundException e){out.print("驱动异常");}
-         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","root","");
+         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","C##ROOT","root");
          sql=con.createStatement();
-         String text="insert into comment(subid,comment,time,username) values('"+k6+"','"+k5+"',now(),'"+k7+"')";
-        String updatesend = "update send set updatetime = now() where id = '"+k6+"'";
+         String text="insert into tb_comment(col_commentid,col_subid,col_comment,col_time,col_username) values(bbs_se.nextval,'"+k6+"','"+k5+"',SYSDATE,'"+k7+"')";
+        String updatesend = "update tb_send set col_updatetime = SYSDATE where col_id = '"+k6+"'";
+        
          sql.executeUpdate(updatesend);
          sql.executeUpdate(text);
+         String commit="commit";
+        	 sql.executeUpdate(commit);
          sql.close();
          con.close();
          

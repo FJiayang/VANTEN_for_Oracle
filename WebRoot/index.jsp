@@ -102,7 +102,7 @@
 										<tr>
 											<td><input type="checkbox" class="checkbox" name="chk"
 												id="chk" value=<%=id%>></td>
-											<%
+											<%  
 												if (rs.getInt("col_flag") == 1 && subject.matches(regex1)) {
 														//置顶且匹配
 											%>

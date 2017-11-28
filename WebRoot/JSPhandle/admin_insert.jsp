@@ -48,6 +48,8 @@
 		sql.setString(3, adminsex);
 		sql.setString(4, adminjob);
 		int rtn = sql.executeUpdate();
+		String commit="commit";
+        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}
@@ -65,7 +67,10 @@
 	<%
 		} else if (flag == false) {
 	%>
-	<jsp:forward page="insert_success.jsp" />
+	<%=adminNo %>
+	<%=name %>
+	<%=adminsex %>
+	<%=adminjob %>
 	<%
 		}
 	%>

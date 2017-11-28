@@ -192,7 +192,7 @@
 														out.print("");
 													}
 										%>
-										<%=comrs.getString("comment")%>
+										<%=comrs.getString("col_comment")%>
 										
 
 										<h5>

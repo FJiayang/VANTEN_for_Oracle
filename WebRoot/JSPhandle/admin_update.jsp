@@ -43,7 +43,7 @@
 		try{
 		Connection conn = DriverManager.getConnection(url, use, password);
 		PreparedStatement sql = conn
-				.prepareStatement("update adminstrator_record set AdminNo=?,AdminSex=?,AdminJob=?,AdminName=? where AdminName=?;");
+				.prepareStatement("update adminstrator_record set AdminNo = ?,AdminSex = ?,AdminJob = ?,AdminName = ? where AdminName = ?;");
 		sql.setString(1, adminNo);
 		sql.setString(2, adminsex);
 		sql.setString(3, adminjob);
@@ -67,12 +67,12 @@
 	<%
 		} else if (flag == false) {
 	%>
-<%-- 	<%=adminNo %>
+ 	<%=adminNo %>
 	<%=adminsex %>
 	<%=adminjob %>
 	<%=name %>
-	<%=oldname %> --%>
-	<jsp:forward page="insert_fail.jsp" />
+	<%=oldname %> 
+	<%-- <jsp:forward page="insert_fail.jsp" /> --%>
 	<%
 		}
 	%>

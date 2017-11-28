@@ -38,7 +38,7 @@
 			con = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521:oracle", "C##ROOT", "root");
 			sql = con.createStatement();
-			String text = "insert into tb_send(col_subject,col_content,col_time,col_username,col_updatetime) values('" + k2 + "','" + k3 + "',SYSDATE,'" + k4 + "',SYSDATE)";
+			String text = "insert into tb_send(col_id,col_subject,col_content,col_time,col_username,col_updatetime) values(bbs_se.nextval,'" + k2 + "','" + k3 + "',SYSDATE,'" + k4 + "',SYSDATE)";
 			sql.executeUpdate(text);
 			sql.close();
 			con.close();

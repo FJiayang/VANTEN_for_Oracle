@@ -25,13 +25,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          String s[] = request.getParameterValues("chk");
          Connection con;Statement sql;ResultSet rs;  
          try{Class.forName("oracle.jdbc.driver.OracleDriver"); } catch(ClassNotFoundException e){out.print("驱动异常");}
-         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","root","");
+         try{con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle","C##root","root");
          sql=con.createStatement();
          if(s!=null){
         	 for(int i=0;i<s.length;i++){
-         String text="delete from tb_send where id = '"+s[i]+"'";
+         String text="delete from tb_send where col_id = "+s[i]+"";
                       sql.executeUpdate(text);
         	 }
+        	 String commit="commit";
+        	 sql.executeUpdate(commit);
          }
          sql.close();
          con.close();
