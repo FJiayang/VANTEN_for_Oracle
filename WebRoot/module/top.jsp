@@ -67,6 +67,15 @@
 							<li><a href="index.jsp">论坛</a></li>
 							<li><a href="x2_resource.jsp">信2资源站（维护中）</a></li>
 						</ul></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">团队中心<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="add_docFile.jsp">添加个人档案</a></li>
+							<li><a href="show_docFile.jsp">查看个人档案</a></li>
+							<li><a href="manage_docFile.jsp">编辑个人档案</a></li>
+							<li><a href="issue_page.jsp">发布信息</a></li>
+						</ul></li>
 					<li class="divider"></li>
 				</ul>
 				<form class="navbar-form navbar-right" role="search">

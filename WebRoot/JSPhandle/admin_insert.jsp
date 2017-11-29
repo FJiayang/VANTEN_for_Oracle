@@ -41,15 +41,12 @@
 		Class.forName(driver).newInstance();
 		try{
 		Connection conn = DriverManager.getConnection(url, use, password);
-		PreparedStatement sql = conn
-				.prepareStatement("insert into adminstrator_record(AdminNo,AdminName,Adminsex,Adminjob)values(?,?,?,?)");
+		CallableStatement sql = conn.prepareCall("{CALL PRC_adminstrator_record(?,?,?,?)}");
 		sql.setString(1, adminNo);
 		sql.setString(2, name);
 		sql.setString(3, adminsex);
 		sql.setString(4, adminjob);
 		int rtn = sql.executeUpdate();
-		String commit="commit";
-        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}
