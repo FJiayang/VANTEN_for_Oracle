@@ -50,8 +50,8 @@
 		sql.setString(4, name);
 		sql.setString(5, oldname);
 		int rtn = sql.executeUpdate();
-		String commit="commit";
-        sql.executeUpdate(commit);
+		
+        
 		if (rtn != 0) {
 			flag = true;
 		}

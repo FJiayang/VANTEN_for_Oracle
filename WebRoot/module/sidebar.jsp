@@ -58,7 +58,15 @@
 				</h4>
 				<!-- 已在top.jsp中声明，此处报错正常 -->
 				<span class="text-muted"> <%
- 	out.println(vipuser + " " + adminuser);
+				if(adminuser!=null)
+				{
+				 	out.println(vipuser + " " + adminuser);
+				}
+				else
+				{
+					 	out.println(vipuser);
+				}
+
  %>
 				</span>
 				<!-- 已在top.jsp中声明，此处报错正常 -->

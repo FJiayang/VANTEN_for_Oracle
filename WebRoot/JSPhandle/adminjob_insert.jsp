@@ -39,13 +39,10 @@
 		Class.forName(driver).newInstance();
 		try{
 		Connection conn = DriverManager.getConnection(url, use, password);
-		PreparedStatement sql = conn
-				.prepareStatement("insert into administrator_job(AdminJob,AdminDuty)values(?,?)");
+		CallableStatement sql = conn.prepareCall("{CALL PRC_administrator_job(?,?)}");
 		sql.setString(1, name);
 		sql.setString(2, duty);
 		int rtn = sql.executeUpdate();
-		String commit="commit";
-        sql.executeUpdate(commit);
 		if (rtn != 0) {
 			flag = true;
 		}
@@ -63,7 +60,8 @@
 	<%
 		} else if (flag == false) {
 	%>
-	<jsp:forward page="insert_success.jsp" />
+	<%=duty %>
+	<%=name %>
 	<%
 		}
 	%>

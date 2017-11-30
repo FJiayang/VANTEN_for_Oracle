@@ -45,8 +45,8 @@
         
          sql.executeUpdate(updatesend);
          sql.executeUpdate(text);
-         String commit="commit";
-        	 sql.executeUpdate(commit);
+         
+        	 
          sql.close();
          con.close();
          

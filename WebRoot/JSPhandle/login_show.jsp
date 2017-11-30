@@ -73,9 +73,7 @@
 			PreparedStatement sql = null;
 			conn = DriverManager.getConnection(url, user, password);
 			sql = conn.prepareStatement("update counter set visitCount=visitCount+1");
-			int rtn = sql.executeUpdate();
-			String commit = "commit";
-			sql.executeUpdate(commit);
+			int rtn = sql.executeUpdate();	
 			sql.close();
 			conn.close();
 		} catch (Exception ex) {
@@ -83,15 +81,12 @@
 		}
 		try {
 			Connection conn = null;
-			PreparedStatement sql = null;
 			conn = DriverManager.getConnection(url, user, password);
-			sql = conn.prepareStatement("insert into iplist(IP,col_times,userName)values(?,?,?)");
+			CallableStatement sql = conn.prepareCall("{CALL PRC_iplist(?,?,?)}");
 			sql.setString(1, counter);
 			sql.setString(2, str_date1);
 			sql.setString(3, (String) user0);
 			int rtn = sql.executeUpdate();
-			String commit = "commit";
-			sql.executeUpdate(commit);
 			sql.close();
 			conn.close();
 		} catch (Exception ex) {

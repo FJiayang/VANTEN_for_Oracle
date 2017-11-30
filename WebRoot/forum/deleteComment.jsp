@@ -32,8 +32,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          sql=con.createStatement();
          String text="delete from tb_comment where col_commentid = '"+result+"'" ;
          sql.executeUpdate(text);
-         String commit="commit";
-        	 sql.executeUpdate(commit);
+         
+        	 
          sql.close();
          con.close();
          out.print("成功删除评论");

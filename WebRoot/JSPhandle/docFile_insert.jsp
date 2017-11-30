@@ -55,8 +55,7 @@
 		Class.forName(driver).newInstance();
 		try {
 			Connection conn = DriverManager.getConnection(url, use, password);
-			PreparedStatement sql = conn.prepareStatement(
-					"INSERT INTO tb_docfile (empid,empjob,empname,empsex,empnation,empnative,empschool,empdept,empmajor,empbirthday,empQQ,empemail,empPhoneNum,empadress,empResume,empremark,edi_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			CallableStatement sql = conn.prepareCall("{CALL PRC_tb_docfile(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			sql.setString(i++, empid);
 			sql.setString(i++, empjob);
 			sql.setString(i++, empname);
@@ -75,8 +74,8 @@
 			sql.setString(i++, empremark);
 			sql.setString(i++, edi_name);
 			int rtn = sql.executeUpdate();
-			String commit = "commit";
-			sql.executeUpdate(commit);
+			
+			
 			if (rtn != 0) {
 				flag = true;
 			}

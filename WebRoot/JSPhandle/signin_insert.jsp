@@ -37,15 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     String password = "root";    
     Class.forName(driver).newInstance();  
     try{  
-    Connection conn= DriverManager.getConnection(url,use,password);    
-    PreparedStatement sql =conn.prepareStatement("insert into tb_user(userName,password,Email,phoneNum)values(?,?,?,?)");  
+    Connection conn= DriverManager.getConnection(url,use,password);
+    CallableStatement sql = conn.prepareCall("{CALL PRC_tb_user(?,?,?,?)}");
     sql.setString(1,users);  
     sql.setString(2,pass);  
     sql.setString(3,email);
     sql.setString(4,PhoneNumber); 
     int rtn=sql.executeUpdate();  
-    String commit="commit";
-    sql.executeUpdate(commit);
     sql.close();  
     conn.close();  
     } catch (Exception ex) {

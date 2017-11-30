@@ -53,8 +53,8 @@
 		if (rtn != 0) {
 			flag = true;
 		}
-		String commit="commit";
-        sql.executeUpdate(commit);
+		
+        
 		sql.close();
 		conn.close();
 		} catch (Exception ex) {

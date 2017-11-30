@@ -32,8 +32,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          String text="delete from tb_send where col_id = "+s[i]+"";
                       sql.executeUpdate(text);
         	 }
-        	 String commit="commit";
-        	 sql.executeUpdate(commit);
+        	 
+        	 
          }
          sql.close();
          con.close();

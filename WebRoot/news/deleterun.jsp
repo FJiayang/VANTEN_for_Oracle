@@ -42,8 +42,8 @@
 					sql.executeUpdate(text);
 				}
 			}
-			String commit="commit";
-        	 sql.executeUpdate(commit);
+			
+        	 
 			sql.close();
 			con.close();
 			out.print("成功删除");

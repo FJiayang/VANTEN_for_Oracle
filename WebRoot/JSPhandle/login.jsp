@@ -25,11 +25,7 @@
 		String users = request.getParameter("inputUser");
 		String pass = request.getParameter("inputPassword");
 		boolean flag = false;
-		
-		
-		
-		
-		
+
 		session.setMaxInactiveInterval(1440);
 	%>
 
@@ -40,32 +36,31 @@
 		String password = "root";
 		Class.forName(driver).newInstance();
 		try {
-		PreparedStatement sql = null;
-		Connection conn = null;
-		ResultSet rs = null;
-		conn = DriverManager.getConnection(url, use, password);
-		sql = conn.prepareStatement("select * from tb_user where userName=? and password=?");
-		sql.setString(1, users);
-		sql.setString(2, pass);
-		rs = sql.executeQuery();
-		if (rs.next()) {
-			flag = true;
-		}
-		rs.close();
-		sql.close();
-		conn.close();
-		
+			PreparedStatement sql = null;
+			Connection conn = null;
+			ResultSet rs = null;
+			conn = DriverManager.getConnection(url, use, password);
+			sql = conn.prepareStatement("select * from tb_user where userName=? and password=?");
+			sql.setString(1, users);
+			sql.setString(2, pass);
+			rs = sql.executeQuery();
+			if (rs.next()) {
+				flag = true;
+			}
+			rs.close();
+			sql.close();
+			conn.close();
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
 	%>
 	<%
 		try {
-		PreparedStatement vipsql = null;
-		ResultSet viprs = null;
-		Connection conn = null;
-		conn = DriverManager.getConnection(url, use, password);
+			PreparedStatement vipsql = null;
+			ResultSet viprs = null;
+			Connection conn = null;
+			conn = DriverManager.getConnection(url, use, password);
 			vipsql = conn.prepareStatement(
 					"select userName,case when VIP = 1 then 'VIP用户' else '普通用户' end as VIP,case when Administrator = 1 then '管理员' else '' end as Administrator from show_user_view where userName=?");
 			vipsql.setString(1, users);
@@ -77,8 +72,8 @@
 				session.setAttribute("Adminuser", adminfo);
 			}
 			viprs.close();
-		vipsql.close();
-		conn.close();
+			vipsql.close();
+			conn.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -86,8 +81,8 @@
 	<!-- 判断是否是正确的登录用户 -->
 	<%
 		if (flag == true) {
-		session.setAttribute("actualuser", users);
-		application.setAttribute("ul",users);
+			session.setAttribute("actualuser", users);
+			application.setAttribute("ul", users);
 	%>
 	<jsp:forward page="login_show.jsp" />
 	<%
@@ -96,9 +91,6 @@
 	<jsp:forward page="login_fail.jsp" />
 	<%
 		}
-		
-		
-		
 	%>
 </body>
 </html>
