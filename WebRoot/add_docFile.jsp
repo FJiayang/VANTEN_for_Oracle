@@ -18,7 +18,7 @@
 <body>
 	<%@ include file="/module/top.jsp"%>
 
-	<%@ include file="/module/limits_check.jsp"%>
+	<%-- <%@ include file="/module/limits_check.jsp"%> --%>
 
 	<div class="container">
 		<%

@@ -77,6 +77,7 @@
 								Connection con;
 								Statement sql;
 								ResultSet rs;
+								CallableStatement csmt;//函数
 								int id = 0;
 								String regex1 = "<(?!img).*?>";
 								/* String username = "admin"; */
@@ -87,6 +88,11 @@
 									out.print("驱动异常");
 								}
 								con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracle", "C##ROOT", "root");
+								csmt=con.prepareCall("{? = call fun_counter}");
+								csmt.registerOutParameter(1, Types.INTEGER);
+								csmt.execute();
+								int counter = csmt.getInt(1);
+								out.print("共有"+counter+"篇帖子");
 								sql = con.createStatement();
 								String send = null;
 								content = "select col_id,col_subject,col_username,col_flag,to_char(col_updatetime,'yyyy-mm-dd hh24:mi:ss') as col_updatetime from tb_send order by col_flag desc,col_updatetime desc";
