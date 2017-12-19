@@ -1,0 +1,857 @@
+--------------------------------------------------------
+--  文件已创建 - 星期二-十二月-19-2017   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ADMINISTRATOR_JOB
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."ADMINISTRATOR_JOB" 
+   (	"ADMINJOB" VARCHAR2(20 BYTE), 
+	"ADMINDUTY" VARCHAR2(600 BYTE) DEFAULT NULL
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table ADMINSTRATOR_RECORD
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."ADMINSTRATOR_RECORD" 
+   (	"ADMINNO" CHAR(12 BYTE), 
+	"ADMINNAME" VARCHAR2(20 BYTE), 
+	"ADMINSEX" CHAR(4 BYTE), 
+	"ADMINJOB" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table COUNTER
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."COUNTER" 
+   (	"VISITCOUNT" NUMBER(11,0) DEFAULT '0'
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table IPLIST
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."IPLIST" 
+   (	"IP" VARCHAR2(30 BYTE), 
+	"COL_TIMES" VARCHAR2(30 BYTE) DEFAULT NULL, 
+	"USERNAME" VARCHAR2(20 BYTE) DEFAULT NULL
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table TB_COMMENT
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."TB_COMMENT" 
+   (	"COL_COMMENTID" NUMBER(11,0), 
+	"COL_COMMENT" VARCHAR2(255 BYTE), 
+	"COL_USERNAME" VARCHAR2(255 BYTE) DEFAULT NULL, 
+	"COL_TIME" DATE DEFAULT NULL, 
+	"COL_SUBID" NUMBER(11,0) DEFAULT NULL
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table TB_DOCFILE
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."TB_DOCFILE" 
+   (	"EMPID" NUMBER(11,0), 
+	"EMPJOB" VARCHAR2(50 BYTE), 
+	"EMPNAME" VARCHAR2(20 BYTE), 
+	"EMPSEX" VARCHAR2(4 BYTE), 
+	"EMPNATION" VARCHAR2(40 BYTE), 
+	"EMPNATIVE" VARCHAR2(40 BYTE), 
+	"EMPSCHOOL" VARCHAR2(40 BYTE), 
+	"EMPDEPT" VARCHAR2(40 BYTE), 
+	"EMPMAJOR" VARCHAR2(40 BYTE), 
+	"EMPBIRTHDAY" VARCHAR2(40 BYTE), 
+	"EMPQQ" VARCHAR2(40 BYTE), 
+	"EMPEMAIL" VARCHAR2(80 BYTE), 
+	"EMPPHONENUM" VARCHAR2(40 BYTE), 
+	"EMPADRESS" VARCHAR2(255 BYTE), 
+	"EMPRESUME" VARCHAR2(600 BYTE), 
+	"EMPREMARK" VARCHAR2(600 BYTE), 
+	"EDI_NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table TB_NEWS
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."TB_NEWS" 
+   (	"NEWSID" NUMBER(11,0), 
+	"NEWTITLE" VARCHAR2(80 BYTE) DEFAULT NULL, 
+	"NEWSTEXT" VARCHAR2(600 BYTE), 
+	"NEWSFROM" VARCHAR2(20 BYTE) DEFAULT NULL, 
+	"ADDTIME" TIMESTAMP (4) DEFAULT sysdate
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table TB_SEND
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."TB_SEND" 
+   (	"COL_ID" NUMBER(37,0), 
+	"COL_SUBJECT" VARCHAR2(255 BYTE), 
+	"COL_CONTENT" VARCHAR2(255 BYTE), 
+	"COL_FLAG" NUMBER(11,0) DEFAULT 0, 
+	"COL_USERNAME" VARCHAR2(255 BYTE) DEFAULT NULL, 
+	"COL_TIME" DATE, 
+	"COL_UPDATETIME" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table TB_USER
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."TB_USER" 
+   (	"USERNAME" VARCHAR2(60 BYTE), 
+	"PASSWORD" VARCHAR2(60 BYTE) DEFAULT NULL, 
+	"EMAIL" VARCHAR2(60 BYTE) DEFAULT NULL, 
+	"PHONENUM" CHAR(18 BYTE) DEFAULT NULL, 
+	"VIP" NUMBER(4,0) DEFAULT 0, 
+	"ADMINISTRATOR" NUMBER(4,0) DEFAULT 0
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+--------------------------------------------------------
+--  DDL for Table X2_RESOURSE
+--------------------------------------------------------
+
+  CREATE TABLE "C##ROOT"."X2_RESOURSE" 
+   (	"COL_RESNAME" VARCHAR2(100 BYTE), 
+	"COL_SIZE" VARCHAR2(30 BYTE), 
+	"COL_UPLOADTIME" DATE, 
+	"COL_DOWNLOADTIMES" NUMBER(11,0) DEFAULT 0, 
+	"COL_LINK" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "DB_SCHOOL" ;
+REM INSERTING into C##ROOT.ADMINISTRATOR_JOB
+SET DEFINE OFF;
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('项目经理',' 项目经理是为项目的成功策划和执行负总责的人，负责处理所有事务性质的工作，包括对项目实行质量、安全、进度、成本管理的责任保证和全面提高项目管理水平，也可称为“执行制作人”。项目经理是项目团队的领导者，项目经理首要职责是在预算范围内按时优质地领导项目小组完成全部项目工作内容，并使客户满意。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('文档管理员','负责本公司的文件收集、归档管理；集中统一保管文书档案，维护档案的完整与安全；凡是具有查考保存价值的本部门的收发文件、内部使用文书和会议记录等均为收集范围，应归档及时、保管有序；负责日常的报表、外来文件等的发放以及回收归档保管；保证所有文书档案的完整、安全、查阅方便；严格把好文件收发登记关，做到完整、准确，保护文件的整洁。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('调研分析员','调查分析师是具备较强的调查研究与综合商务分析等能力的咨询专业人员，可以运用定性和定量调查方法，收集有关信息，进行数据处理和分析，形成报告以供客户决策参考。主要工作包括：确定调查项目；设计调查方案；搜集有关信息资料；设计调查问卷；进行抽样设计；指导和培训调查员；进行预调查；组织实施实地调查；调查数据处理和分析；撰写调查分析报告；评估和形成调查分析报告等。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('系统分析员','参与用户需求调研、负责系统体系结构、功能、性能的分析和总体设计工作；负责项目的开发流程管理，进行项目的计划、管理、跟进工作；参与并指导开发工程师完成系统详细设计和开发工作，解决相应业务、技术难题；参与编制用户手册、协助客户的系统软件、硬件平台的安装实施工作；制定项目文档格式，编写项目管理规范要求的相关文档。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('模块设计员','模块设计员实际上就是网站的总体设计，是客户需求和开发者之间的桥梁。他必须清楚的知道网站的模式、运营思路、用户群体使用习惯、网站的功能等等环节，网站架构水平的高低决定着网站的整体性能和运营模式的时效性和经济性。模块设计员通常是由经验丰富的数据库搭建技术人员来担任。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('程序员','负责软件项目的详细设计、编码和内部测试的组织实施；协助项目经理和相关人员同客户进行沟通，保持良好的客户关系；参与需求调研、项目可行性分析、技术可行性分析和需求分析；熟悉并熟练掌握交付软件部开发的软件项目的相关软件技术；负责向项目经理及时反馈软件开发中的情况，并根据实际情况提出改进建议；参与软件开发和维护过程中重大技术问题的解决，参与软件首次安装调试、数据割接、用户培训和项目推广。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('美工设计员',' 在网络行业习惯上称为网站美工或网站设计。主要工作是：负责网页界面的美术设计、创意工作和制作工作；根据各种相关网站的用户群，提出构思新颖、有高度吸引力的创意设计；对页面进行优化，使用户操作更趋于人性化；收集和分析用户体验最新的需求。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('测试工程师','编写测试计划、规划详细的测试方案、编写测试用例；根据测试计划搭建和维护测试环境；执行测试工作，提交测试报告。包括编写用于测试的自动测试脚本，完整地记录测试结果，编写完整的测试报告等相关的技术文档；对测试中发现的问题进行详细分析和准确定位，与开发人员讨论缺陷解决方案；提出对产品的进一步改进的建议，并评估改进方案是否合理；对测试结果进行总结与统计分析，对测试进行跟踪，并提出反馈意见。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('硬件工程师','按照计划完成符合功能性能要求和质量标准的硬件产品；要求熟悉计算机市场行情；制定计算机组装计划；能够选购组装需要的硬件设备，并能合理配置、安装计算机和外围设备；安装和配置计算机软件系统；保养硬件和外围设备；清晰描述出现的计算机软硬件故障。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('数据库管理员',' 设计数据库设计，包括字段、表和关键字段；监视监控数据库的警告日志，定期做备份删除；规范数据库用户的管理定期对管理员等重要用户密码进行修改；数据库管理员规定用户访问权限和为不同用户组分配资源；数据库管理员能够为不同的数据库管理系统用户规定不同的访问权限，以保护数据库不被未经授权的访问和破坏。');
+Insert into C##ROOT.ADMINISTRATOR_JOB (ADMINJOB,ADMINDUTY) values ('客户联络员','  客户联络员是指从事客户、顾客与公司、单位两者之间进行沟通、传递信息、进行协调的人员。主要工作有：定时，定量访问客户，并提出访问报告，上报销售部经理；根据访问结果，协助建立客户资料库；期与客户进行联系，与客户保持密切联系，反馈客户意见；对潜在客户进行访问，并提出初访报告并上报。');
+REM INSERTING into C##ROOT.ADMINSTRATOR_RECORD
+SET DEFINE OFF;
+Insert into C##ROOT.ADMINSTRATOR_RECORD (ADMINNO,ADMINNAME,ADMINSEX,ADMINJOB) values ('15251101205 ','巫雪银','女 ','调研分析员');
+Insert into C##ROOT.ADMINSTRATOR_RECORD (ADMINNO,ADMINNAME,ADMINSEX,ADMINJOB) values ('15251101219 ','陈永健','男 ','模块设计员');
+Insert into C##ROOT.ADMINSTRATOR_RECORD (ADMINNO,ADMINNAME,ADMINSEX,ADMINJOB) values ('15251101208 ','莫君铭','男 ','模块设计员');
+Insert into C##ROOT.ADMINSTRATOR_RECORD (ADMINNO,ADMINNAME,ADMINSEX,ADMINJOB) values ('15251101201 ','麦贵淇','男 ','程序员');
+Insert into C##ROOT.ADMINSTRATOR_RECORD (ADMINNO,ADMINNAME,ADMINSEX,ADMINJOB) values ('15251101238 ','符嘉阳','男 ','项目经理');
+REM INSERTING into C##ROOT.COUNTER
+SET DEFINE OFF;
+Insert into C##ROOT.COUNTER (VISITCOUNT) values (469);
+REM INSERTING into C##ROOT.IPLIST
+SET DEFINE OFF;
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 19:24:19','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-18 19:26:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-18 19:32:54','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-18 20:00:15','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-18 20:01:45','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-18 20:02:21','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-18 20:19:39','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 20:30:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 21:01:40','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 12:43:44','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 16:15:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 18:15:23','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 18:31:56','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-11-19 21:22:22','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-19 21:22:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-11-19 21:23:17','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-19 21:49:13','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-19 22:00:31','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 22:43:42','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-19 22:48:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-19 22:49:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-20 12:19:10','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-20 13:07:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 13:15:35','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('14.16.191.177','2017-11-20 13:23:25','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 13:26:33','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 14:27:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 14:29:54','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-20 15:13:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 15:24:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 16:11:10','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 16:41:40','FJY');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 16:52:33','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 18:13:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 18:13:36','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('112.97.57.57','2017-11-20 18:21:13','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('112.97.57.57','2017-11-20 18:21:56','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-20 18:23:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-20 18:44:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.125','2017-11-20 20:28:23','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.125','2017-11-20 20:30:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 23:04:17','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 23:11:32','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 23:22:11','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 23:27:25','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-20 23:39:19','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.46','2017-11-21 01:19:41','刘乃晋');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.46','2017-11-21 01:22:34','刘乃晋');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 07:43:31','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-21 07:44:35','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 08:20:49','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 08:34:02','FJY');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('183.6.91.67','2017-11-21 09:11:04','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 09:13:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 10:12:46','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 11:22:04','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 12:58:43','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-21 13:21:01','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 18:29:32','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 18:35:00','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 19:04:21','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 19:20:35','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 19:43:50','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 19:48:14','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 19:48:55','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-11-21 20:30:35','林佳琳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 20:57:53','ojbk');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 20:59:30','ojbk');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:00:45','ojbk');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:04:36','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:05:01','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:05:44','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:06:52','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 21:07:27','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-21 23:19:19','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-22 00:01:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.18','2017-11-28 23:10:35','雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-29 07:44:44','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-01 13:08:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-01 22:54:55','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-12-01 23:42:23','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-05 10:43:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-12-07 16:48:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-07 17:07:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-12-08 10:34:16','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-09 23:59:25','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-12-10 00:04:39','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-12-11 19:31:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 21:28:33','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.22.12.73','2017-12-13 21:33:37','巫雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 21:33:55','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:04:36','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:05:47','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:06:20','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:06:43','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:06:51','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:07:02','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:07:16','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:08:10','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:09:04','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:09:34','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.7','2017-12-13 22:20:59','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:34:02','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:40:19','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-12-13 22:40:30','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.18','2017-12-13 22:40:43','巫雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:53:36','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 23:03:35','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-12-18 22:39:40','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-12-18 23:13:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-12-18 23:15:30','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-12-19 10:40:11','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-28 23:17:02','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.18','2017-11-28 23:19:27','雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-28 23:21:05','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-28 23:28:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-28 23:29:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.18','2017-11-28 23:35:10','雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-29 16:20:35','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-29 16:21:44','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-29 18:31:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-29 20:21:29','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 21:42:05','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.22.12.73','2017-12-13 21:42:09','巫雪银');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:11:32','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:14:01','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:14:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:15:12','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:15:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:15:48','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:18:28','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:20:55','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-28 20:21:34','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-04 12:45:14','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-07 18:20:34','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-10 08:37:55','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-10 11:15:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 21:52:57','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:03:01','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:03:47','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-13 22:18:08','莫君铭');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-12-13 22:24:04','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-12-14 13:03:20','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-12-18 23:20:38','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-12-18 23:23:07','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.167.22','2017-12-18 23:28:33','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.232','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','0',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','Wed Oct 11 12:37:35 CST 2017',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-11 12:44:24',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-11 12:55:22',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-11 13:03:14',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-11 13:06:29',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-11 21:28:51',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-11 21:31:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-11 21:31:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-11 21:53:02',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-12 10:11:36',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-12 12:00:13',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-12 12:01:32',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-12 17:07:41',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-12 17:07:57',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-13 12:17:15',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:30:32',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:01',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:04',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:14',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:19',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:39',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:48',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.27','2017-10-13 12:31:50',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.4','2017-10-13 15:34:27',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.4','2017-10-13 15:36:05',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-13 21:00:31',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 21:49:05',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 21:59:11',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-13 21:59:36',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-13 22:01:27',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-13 22:01:52',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:05:02',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:05:58',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:06:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:10:11',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:47:19',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 22:52:45',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 23:04:33',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 23:09:04',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 23:10:26',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-13 23:19:01',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 23:21:43',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-13 23:22:21',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-13 23:23:02',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-13 23:28:47',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-13 23:30:22',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:40:13',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:44:29',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:47:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:48:11',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:50:00',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:50:30',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:50:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:51:22',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:51:49',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:52:31',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:52:57',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:54:51',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:57:08',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:57:50',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:58:19',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:58:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 17:59:38',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 18:00:21',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 18:00:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 18:01:21',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 18:04:47',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.35','2017-10-14 18:13:16',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:18:52',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:21:47',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:23:00',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:23:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:23:36',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:35:54',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:35:58',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:36:07',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:36:12',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:37:40',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:37:42',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:37:46',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:37:49',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:40:42',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:41:20',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:42:23',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:45:32',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:46:16',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:46:50',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:48:17',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:48:50',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:48:53',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:50:36',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:50:46',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:53:30',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 21:54:07',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 22:03:19',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-14 22:13:11',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-14 22:15:32',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-14 22:15:43',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-14 22:16:10',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:51:18',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:51:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:52:52',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:53:27',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:55:01',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 09:58:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:05:02',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:16:55',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:16:58',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:19:01',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:33:59',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:41:54',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:42:29',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:43:51',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:44:23',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:44:34',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:44:54',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-15 10:52:33',null);
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-19 22:06:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-23 22:46:50','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-23 22:48:01','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-23 22:58:51','???');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-23 23:00:03','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-23 23:04:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 08:54:12','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 09:11:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 09:11:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 09:12:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 11:55:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 15:02:38','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 15:16:17','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 18:51:21','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 19:12:22','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 20:28:34','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 20:50:43','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 20:55:23','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 20:58:13','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 20:58:42','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 21:46:06','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('192.168.1.172','2017-10-24 22:08:32','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 22:20:42','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-24 22:23:23','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 22:33:24','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-24 22:36:43','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-24 22:48:16','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 22:49:12','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.37','2017-10-24 22:58:18','刘乃晋');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-10-24 23:00:53','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 23:01:58','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-24 23:03:38','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-24 23:06:17','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-24 23:07:13','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-10-24 23:09:56','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-24 23:11:26','小雨花');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-24 23:11:49','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-24 23:12:16','小雨花');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.23','2017-10-24 23:12:43','招灿珍');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.37','2017-10-24 23:13:56','刘乃晋');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.23','2017-10-24 23:14:24','招灿珍');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-24 23:17:30','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.36','2017-10-24 23:20:00','小雨花');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-24 23:21:51','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-24 23:26:57','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-24 23:26:58','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-24 23:27:23','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-24 23:47:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-24 23:50:27','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-24 23:55:42','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-25 00:04:43','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 08:50:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 08:51:12','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 08:52:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 08:52:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 08:54:00','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 09:00:34','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 09:01:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 09:02:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 09:03:22','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 09:03:44','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 12:21:42','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 12:22:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-25 12:22:58','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 12:32:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-25 12:56:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-25 13:01:25','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 20:57:59','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 20:58:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:06:24','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:07:34','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:08:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:08:50','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:11:51','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:19:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:22:47','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:28:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:28:50','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:29:51','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 21:30:21','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:34:31','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:46:17','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:46:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:47:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:49:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:50:01','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:51:10','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 22:55:25','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 23:03:21','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-25 23:04:22','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-25 23:14:08','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-25 23:14:43','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-25 23:15:05','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-25 23:56:51','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-26 10:16:28','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 18:49:54','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-10-29 18:50:59','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 18:53:14','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.32','2017-10-29 18:59:05','mgq');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:06:49','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:17:23','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:27:18','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:56:09','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:58:19','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 19:59:30','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 20:03:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-29 20:06:26','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-29 20:09:33','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 20:15:04','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-29 22:07:57','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 22:23:07','ldn');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 22:27:54','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 22:29:50','ldnn');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 22:30:49','ldnn');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 23:11:33','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-10-29 23:32:25','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-29 23:35:31','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-29 23:38:44','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-29 23:40:47','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-30 07:21:32','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-30 13:27:04','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-30 14:38:38','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.29','2017-10-30 17:33:11','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.29','2017-10-30 17:33:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.29','2017-10-30 17:33:50','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.18.33.29','2017-10-30 17:34:37','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-30 21:19:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-30 21:52:04','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-10-30 22:20:23','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-30 22:33:40','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.8','2017-10-30 23:05:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-10-30 23:13:15','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-10-30 23:14:45','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:22:10','目');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:28:01','目');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:31:50','目');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:38:13','林佳琳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:39:16','林佳琳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:41:06','目');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.30','2017-10-30 23:44:04','目');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-10-31 07:28:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.22.6.71','2017-10-31 09:04:55','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.22.9.211','2017-10-31 11:43:38','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-01 18:45:53','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-01 18:52:18','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-01 19:09:17','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-01 19:09:25','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-02 12:38:02','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-02 12:43:03','FJY');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-02 12:52:26','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 12:10:30','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 12:15:43','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 12:53:58','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 12:55:01','FJY');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 13:00:07','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 13:08:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.19','2017-11-03 13:22:26','杨SHIMIN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-03 13:23:49','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-03 13:42:35','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.19','2017-11-03 14:11:15','杨SHIMIN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.8','2017-11-03 14:27:38','LDN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.198.19','2017-11-03 14:39:00','杨SHIMIN');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.28.199.39','2017-11-03 15:01:45','蔡培淳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.13','2017-11-03 21:43:48','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-03 21:47:27','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-03 23:12:07','陈永健');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.25.152.26','2017-11-04 07:34:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('172.22.1.229','2017-11-04 10:14:51','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('127.0.0.1','2017-11-09 17:13:47','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-11 22:37:22','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-11 23:13:18','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-11 23:29:56','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-11 23:31:53','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-11 23:35:32','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-12 09:51:30','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-12 10:26:07','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-12 12:40:48','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-12 20:28:14','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-12 21:03:48','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-13 12:14:39','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-14 22:06:14','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 19:55:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 20:07:05','符嘉阳');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 20:22:02','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 20:28:06','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 21:22:45','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 21:30:08','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 21:49:46','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 21:51:46','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 21:54:15','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 22:01:28','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 22:37:51','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 22:55:41','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 23:13:59','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-15 23:22:12','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 10:31:03','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 10:45:51','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 10:46:16','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 15:41:44','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 16:32:41','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 18:21:36','admin');
+Insert into C##ROOT.IPLIST (IP,COL_TIMES,USERNAME) values ('0:0:0:0:0:0:0:1','2017-11-18 19:05:38','admin');
+REM INSERTING into C##ROOT.TB_COMMENT
+SET DEFINE OFF;
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (32,'发评论','admin',to_date('27-11月-17','DD-MON-RR'),25);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (69,'1','admin',to_date('28-11月-17','DD-MON-RR'),25);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (24,'1','符嘉阳',to_date('12-11月-17','DD-MON-RR'),18);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (29,'卢丹娜，蔡培淳：新闻板块，公告板块','admin',to_date('20-11月-17','DD-MON-RR'),23);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (31,'麦贵淇：登录界面，聊天室板块','admin',to_date('20-11月-17','DD-MON-RR'),23);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (32,'符嘉阳：剩余板块','admin',to_date('20-11月-17','DD-MON-RR'),23);
+Insert into C##ROOT.TB_COMMENT (COL_COMMENTID,COL_COMMENT,COL_USERNAME,COL_TIME,COL_SUBID) values (34,'更新时间','admin',to_date('20-11月-17','DD-MON-RR'),26);
+REM INSERTING into C##ROOT.TB_DOCFILE
+SET DEFINE OFF;
+Insert into C##ROOT.TB_DOCFILE (EMPID,EMPJOB,EMPNAME,EMPSEX,EMPNATION,EMPNATIVE,EMPSCHOOL,EMPDEPT,EMPMAJOR,EMPBIRTHDAY,EMPQQ,EMPEMAIL,EMPPHONENUM,EMPADRESS,EMPRESUME,EMPREMARK,EDI_NAME) values (3,'程序员','麦贵淇','男','汉族','广东云浮','广东财经大学','信息','信管','2000-07-12','962864309','962864309@qq.com','17520468642','中国','程序员','程序员','mgq');
+Insert into C##ROOT.TB_DOCFILE (EMPID,EMPJOB,EMPNAME,EMPSEX,EMPNATION,EMPNATIVE,EMPSCHOOL,EMPDEPT,EMPMAJOR,EMPBIRTHDAY,EMPQQ,EMPEMAIL,EMPPHONENUM,EMPADRESS,EMPRESUME,EMPREMARK,EDI_NAME) values (4,'调研分析员','巫雪银','女','汉','广东省兴宁市','广东财经大学','信息学院','信息管理与信息系统','2017-12-13','1106407810','1106407810@qq.com','1','1','1','1','巫雪银');
+Insert into C##ROOT.TB_DOCFILE (EMPID,EMPJOB,EMPNAME,EMPSEX,EMPNATION,EMPNATIVE,EMPSCHOOL,EMPDEPT,EMPMAJOR,EMPBIRTHDAY,EMPQQ,EMPEMAIL,EMPPHONENUM,EMPADRESS,EMPRESUME,EMPREMARK,EDI_NAME) values (2,'模块设计员','陈永健','男','汉族','广东江门','广东财经大学','信息学院','信息管理与信息系统','1996/07/15','1013338945','1013338945@qq.com','13822476952','广东江门新会','暂无','暂无','陈永健');
+Insert into C##ROOT.TB_DOCFILE (EMPID,EMPJOB,EMPNAME,EMPSEX,EMPNATION,EMPNATIVE,EMPSCHOOL,EMPDEPT,EMPMAJOR,EMPBIRTHDAY,EMPQQ,EMPEMAIL,EMPPHONENUM,EMPADRESS,EMPRESUME,EMPREMARK,EDI_NAME) values (1,'项目经理','符嘉阳','男','汉','河源','广东财经大学','信息学院','信息管理与信息系统',null,'1186032234','fjy8018@gmail.com','13536292949','广东财经大学25栋','暂无','暂无','admin');
+REM INSERTING into C##ROOT.TB_NEWS
+SET DEFINE OFF;
+Insert into C##ROOT.TB_NEWS (NEWSID,NEWTITLE,NEWSTEXT,NEWSFROM,ADDTIME) values (4,'主站重新上线啦，支持外网直接访问！','推荐使用内网访问，速度更快\r\nhttp://172.25.152.8:8087/xz1_v1.1/index.html\r\n\r\n使用外网或者流量请访问以下地址\r\nhttp://myserver8018.free.ngrok.cc/xz1_v1.1/index.html','admin',to_timestamp('20-11月-17 07.25.04.000000000 上午','DD-MON-RR HH.MI.SSXFF AM'));
+Insert into C##ROOT.TB_NEWS (NEWSID,NEWTITLE,NEWSTEXT,NEWSFROM,ADDTIME) values (5,'近期更新的内容','1、论坛版块，可置顶和删帖（不建议操作）  2、聊天室外观大改，并且可以发表情包啦！  3、添加公告和新闻版块  4、添加个人档案管理版块','admin',to_timestamp('20-11月-17 07.27.08.000000000 上午','DD-MON-RR HH.MI.SSXFF AM'));
+Insert into C##ROOT.TB_NEWS (NEWSID,NEWTITLE,NEWSTEXT,NEWSFROM,ADDTIME) values (6,'请各位尽快按照以下步骤进行操作','团队中心-添加个人档案-填写信息','admin',to_timestamp('20-11月-17 07.28.11.000000000 上午','DD-MON-RR HH.MI.SSXFF AM'));
+REM INSERTING into C##ROOT.TB_SEND
+SET DEFINE OFF;
+Insert into C##ROOT.TB_SEND (COL_ID,COL_SUBJECT,COL_CONTENT,COL_FLAG,COL_USERNAME,COL_TIME,COL_UPDATETIME) values (18,'发帖人','emmm',0,'符嘉阳',to_date('12-11月-17','DD-MON-RR'),to_date('28-11月-17','DD-MON-RR'));
+Insert into C##ROOT.TB_SEND (COL_ID,COL_SUBJECT,COL_CONTENT,COL_FLAG,COL_USERNAME,COL_TIME,COL_UPDATETIME) values (24,'意见收集贴','大家有什么意见和建议直接在下面跟帖就好',1,'admin',to_date('20-11月-17','DD-MON-RR'),to_date('28-11月-17','DD-MON-RR'));
+Insert into C##ROOT.TB_SEND (COL_ID,COL_SUBJECT,COL_CONTENT,COL_FLAG,COL_USERNAME,COL_TIME,COL_UPDATETIME) values (25,'本网站再次稳定运行，可通过外网访问','经过整体大改，以及众多开发人员的努力，我们更新了聊天室，论坛，新闻，公告，档案等板块，并购买了永久域名，可以通过外网访问啦！',0,'admin',to_date('20-11月-17','DD-MON-RR'),to_date('19-12月-17','DD-MON-RR'));
+Insert into C##ROOT.TB_SEND (COL_ID,COL_SUBJECT,COL_CONTENT,COL_FLAG,COL_USERNAME,COL_TIME,COL_UPDATETIME) values (26,'测试我的名字','测试',0,'陈永健',to_date('20-11月-17','DD-MON-RR'),to_date('20-11月-17','DD-MON-RR'));
+REM INSERTING into C##ROOT.TB_USER
+SET DEFINE OFF;
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('雪银','wxy123','1106407810@qq.com','13129397778       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('vanten123','a123123','1@qq.com','11111111111       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('15251101125','abc123','122222@qq.com','11111111111       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('??','q1w2e3r4','759619758@qq.com','18920732796       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('???','15251101216','651231290@qq.com','13288310358       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('test','123456abc','1234@qq.com','123456778         ',0,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('巫雪银','a123456','1106407810@qq.com','1                 ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('?ShiMIN','123456','123123','12580             ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('FJY','12345','12345@qq.com','12345678          ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('LDN','wing961029','854461803@qq.com','13168325028       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('admin','0000','root@gmail.com','1234567890        ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('fjy','123','1234@qq.com','123               ',0,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('ldnn','wing961029','854461803@qq.com','13168325028       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('mgq','1234','123@qq.com','125643            ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('ojbk','123','ojbk@163.com','123456            ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('zero','1234321q','5555@qq','135               ',0,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('刘乃晋','q1w2e3r4','759619758@qq.com','18920732796       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('小雨花','123asd','651231290@qq.com','13288310358       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('招灿珍','123456','yoyo.dyut.gtde@qq.com','18718985745       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('杨SHIMIN','a123456','123456789@qq.com','12580             ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('林佳琳','1234321','526126074@qq.com','123               ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('琳','zsadxc123','526126074@qq.com','13650728232       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('目','12321q','526126074@qq.com','13650728232       ',0,0);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('符嘉阳','5805018','1186032234@qq.com','13534466781       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('蔡培淳','a123','515895485@qq.com','13118855108       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('陈宝诺','LUSH632%%','1286070934@qq.com','13650728540       ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('陈永健','123456jian','1013338945@qq.com','138224769552      ',1,1);
+Insert into C##ROOT.TB_USER (USERNAME,PASSWORD,EMAIL,PHONENUM,VIP,ADMINISTRATOR) values ('莫君铭','123','123@qq.com','123456789         ',1,1);
+REM INSERTING into C##ROOT.X2_RESOURSE
+SET DEFINE OFF;
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('ReadMe.txt','1KB',to_date('09-10月-17','DD-MON-RR'),0,'resource/ReadMe.txt');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('linux.x64_11gR2_database_1of2','1.15GB',to_date('09-10月-17','DD-MON-RR'),0,'resource/linux.x64_11gR2_database_1of2.zip');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('linux.x64_11gR2_database_2of2','1.03GB',to_date('09-10月-17','DD-MON-RR'),0,'resource/linux.x64_11gR2_database_2of2.zip');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('XP系统镜像','601MB',to_date('09-10月-17','DD-MON-RR'),0,'resource/zh-hans_windows_xp_professional_with_service_pack_3_x86_cd_x14-80404.iso');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('柯南剧场版21 唐红的恋歌','1019M',to_date('10-10月-17','DD-MON-RR'),0,'resource/[WMSUB][Detective Conan][Movie_21_ka ra ku re na i no love letter][BDRIP][GB][720P].mp4');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('MySQL+PHP懒人包','209MB',to_date('11-10月-17','DD-MON-RR'),0,'resource/wampserver3.0.6_x64_apache2.4.23_mysql5.7.14_php5.6.25-7.0.10.exe');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('柯南剧场版21 唐红的恋歌1080P无水印','1.92G',to_date('11-10月-17','DD-MON-RR'),0,'resource/[WMSUB][Detective Conan][Movie_21_ka ra ku re na i no love letter][BDRIP][GB][1080P].mp4');
+Insert into C##ROOT.X2_RESOURSE (COL_RESNAME,COL_SIZE,COL_UPLOADTIME,COL_DOWNLOADTIMES,COL_LINK) values ('CentOS','4.21G',to_date('11-10月-17','DD-MON-RR'),0,'resource/CentOS-7-x86_64-DVD-1708.iso');
+--------------------------------------------------------
+--  Constraints for Table ADMINISTRATOR_JOB
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."ADMINISTRATOR_JOB" MODIFY ("ADMINJOB" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ADMINSTRATOR_RECORD
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."ADMINSTRATOR_RECORD" MODIFY ("ADMINNO" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."ADMINSTRATOR_RECORD" MODIFY ("ADMINNAME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."ADMINSTRATOR_RECORD" MODIFY ("ADMINSEX" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."ADMINSTRATOR_RECORD" MODIFY ("ADMINJOB" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table COUNTER
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."COUNTER" MODIFY ("VISITCOUNT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table IPLIST
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."IPLIST" MODIFY ("IP" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_COMMENT
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."TB_COMMENT" MODIFY ("COL_COMMENTID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_DOCFILE
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPID" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPJOB" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPNAME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPSEX" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPNATION" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPNATIVE" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPSCHOOL" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPDEPT" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPMAJOR" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPQQ" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPEMAIL" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPPHONENUM" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPADRESS" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPRESUME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EMPREMARK" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_DOCFILE" MODIFY ("EDI_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_NEWS
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."TB_NEWS" MODIFY ("NEWSID" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_NEWS" MODIFY ("ADDTIME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_SEND
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."TB_SEND" MODIFY ("COL_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_SEND" MODIFY ("COL_SUBJECT" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_SEND" MODIFY ("COL_CONTENT" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_SEND" MODIFY ("COL_TIME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_SEND" MODIFY ("COL_UPDATETIME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_USER
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."TB_USER" MODIFY ("USERNAME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_USER" MODIFY ("VIP" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."TB_USER" MODIFY ("ADMINISTRATOR" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table X2_RESOURSE
+--------------------------------------------------------
+
+  ALTER TABLE "C##ROOT"."X2_RESOURSE" MODIFY ("COL_RESNAME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."X2_RESOURSE" MODIFY ("COL_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."X2_RESOURSE" MODIFY ("COL_UPLOADTIME" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."X2_RESOURSE" MODIFY ("COL_DOWNLOADTIMES" NOT NULL ENABLE);
+  ALTER TABLE "C##ROOT"."X2_RESOURSE" MODIFY ("COL_LINK" NOT NULL ENABLE);
+--------------------------------------------------------
+--  DDL for Trigger ADMINJOB_SECURE1
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##ROOT"."ADMINJOB_SECURE1" 
+BEFORE INSERT OR UPDATE OR DELETE
+ON ADMINISTRATOR_JOB
+BEGIN
+   IF to_char(SYSDATE,'DY')='星期天'
+   THEN
+   RAISE_APPLICATION_ERROR(-20600,'不能在周末修改岗位表哦');
+   END IF;
+END;
+/
+ALTER TRIGGER "C##ROOT"."ADMINJOB_SECURE1" ENABLE;
